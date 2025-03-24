@@ -33,12 +33,23 @@ export const createOrder = async (req, res) => {
 export const capturePayment = async (req, res) => {
   try {
     const { orderId, amount, paymentMethod, transactionId } = req.body;
+
+    if (!orderId || !amount || !paymentMethod || !transactionId) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+
     const order = await Order.findOne({ orderId });
 
     if (!order) return res.status(404).json({ message: "Order not found" });
 
-    order.amountPaid += amount;
-    order.paymentDetails.push({ amount, paymentMethod, transactionId });
+    // ✅ Convert amount to a number before adding
+    const parsedAmount = Number(amount);
+    if (isNaN(parsedAmount) || parsedAmount <= 0) {
+      return res.status(400).json({ message: "Invalid amount" });
+    }
+
+    order.amountPaid += parsedAmount;
+    order.paymentDetails.push({ amount: parsedAmount, paymentMethod, transactionId });
 
     if (order.amountPaid >= order.amountTotal) {
       order.isPaidInFull = true;
@@ -50,3 +61,4 @@ export const capturePayment = async (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 };
+

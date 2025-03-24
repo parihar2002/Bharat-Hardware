@@ -1,0 +1,162 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    padding: 15px 30px;
+    color: white;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ffcc00;
+  }
+  
+  .signup-btn {
+    background: #ffcc00;
+    color: #111;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .signup-btn:hover {
+    background: #e6b800;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: white;
+  }
+  
+  .hero-content {
+    max-width: 500px;
+  }
+  
+  .hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .shop-now-btn {
+    background: #ffcc00;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .shop-now-btn:hover {
+    background: #e6b800;
+  }
+  
+  .hero-image {
+    width: 400px;
+    border-radius: 10px;
+  }
+  
+  /* Categories Section */
+  .categories {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .categories h2 {
+    margin-bottom: 20px;
+  }
+  
+  .category-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .category-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  /* CTA Section */
+  .cta {
+    text-align: center;
+    background: #111;
+    color: white;
+    padding: 50px;
+    margin-top: 30px;
+  }
+  
+  .cta h2 {
+    margin-bottom: 10px;
+  }
+  
+  .cta p {
+    margin-bottom: 20px;
+  }
+  
+  .cta .signup-btn {
+    background: #ffcc00;
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .cta .signup-btn:hover {
+    background: #e6b800;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
