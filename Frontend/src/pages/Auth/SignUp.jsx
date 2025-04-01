@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-
-import "../../styles/Auth.css";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +18,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
     try {
       const response = await axios.post("http://localhost:5000/api/auth/signup", formData);
       console.log(response.data);
@@ -39,6 +38,7 @@ const SignUp = () => {
         <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
         <button type="submit">Sign Up</button>
       </form>
+      <p>Already have an account? <Link to="/login">Login</Link></p>
     </div>
   );
 };
